@@ -1,0 +1,117 @@
+\documentclass{ExpressiveResume}
+
+% Tight body type to fit a single page
+\renewcommand{\normalsize}{\fontsize{10.2pt}{11.2pt}\selectfont}
+\renewcommand{\spacesmall}{2pt}
+\renewcommand{\spacenormal}{5pt}
+
+\begin{document}
+\normalsize
+
+\resumeheader[
+    firstname=Yasir,
+    lastname=Raza,
+    email=yasirabdali6@gmail.com,
+    github=Yasirrazaa,
+    linkedin=yasir-raza,
+    state=Islamabad,
+    qrcode=./images/qr.png
+]
+\begin{flushleft}
+    \faIcon{phone-alt} \href{tel:+923145363379}{+92 314 5363379}
+    \contactseparator
+    \faIcon[brands]{python} \href{https://pypi.org/user/yasirabdali6/}{pypi.org/user/yasirabdali6}
+    \contactseparator
+    \faIcon[brands]{kaggle} \href{https://www.kaggle.com/yasirabdaali/}{kaggle.com/yasirabdaali}
+    \contactseparator
+    \faIcon[regular]{globe} \href{https://yasirrazaa.github.io}{yasirrazaa.github.io}
+\end{flushleft}
+
+\summary{AI Engineer with 1.5+ years of remote experience on US-based teams, building production LLM
+systems: agent platforms, MCP tooling, voice AI, and model fine-tuning. Creator of \tech{NotebookLLM}
+(10K+ PyPI downloads). I ship end-to-end --- architecture, evaluation, deployment, and cost control.}
+
+% ----- Technical Skills -----
+\section{Technical Skills}
+\tagline{LLM \& Agents}{LangGraph, MCP (Model Context Protocol), function calling, RAG, agent memory, prompt engineering, red-teaming}
+\tagline{Models \& Training}{PyTorch, Transformers, LoRA/QLoRA, Unsloth, PEFT, GRPO (TRL), Whisper / Faster-Whisper, ElevenLabs, Gemini}
+\tagline{Infra \& Deployment}{FastAPI, Docker, RunPod serverless, AWS, S3, CI/CD (GitHub Actions), CUDA graph optimization}
+\tagline{Languages \& Data}{Python, TypeScript, SQL, Bash; pandas, NumPy, Scrapy, Playwright}
+
+% ----- Work Experience -----
+\section{Work Experience}
+
+\experience{Teamlift --- United States (Remote)}{%
+    \role{Junior Data Scientist}{Jan 2024 - Dec 2024}{
+        \achievement{
+            Scraped \tech{thousands of AI tools} from public tool directories and built an automated
+            verification pipeline (HTTP status checks, screenshot capture, freshness validation)
+            powering \tech{Teamo}, Teamlift's recommendation engine.
+        }
+        \achievement{
+            Preprocessed and normalized thousands of tool records into model-ready features,
+            eliminating stale and duplicate listings from the dataset.
+        }
+    }
+    \role{Data Science Intern}{Jul 2023 - Dec 2023}{
+        \achievement{
+            Built an automated pipeline collecting \tech{thousands of job postings} from dice.com
+            with deduplication, guaranteeing a clean non-redundant dataset.
+        }
+        \achievement{
+            Trained \tech{time-series models} to forecast skill demand extracted from job
+            descriptions, informing product and market decisions.
+        }
+    }
+}
+
+% ----- Technical Projects -----
+\section{Technical Projects}
+
+\project{Kausal --- Production AI Agent Platform (private)}{2026}{
+    \achievement{
+        Extended the open-source ii-agent framework in \tech{pure Python} (no LangGraph): custom
+        \tech{RAG} pipeline, layered memory, full \tech{observability} (structured logging, OpenTelemetry
+        tracing, metrics with self-hosted SigNoz), realtime \tech{voice/video via LiveKit},
+        \tech{LiteLLM} multi-model routing, agent skills, and S3 storage --- guarded by a
+        \tech{7,275-test} suite.
+    }
+}
+
+\project{NotebookLLM --- Open-Source Python Package + MCP Server}{2025 - 2026}{
+    \achievement{
+        Published a \tech{PyPI} package + MCP server (10K+ downloads) making Jupyter notebooks
+        LLM-efficient: agent-optimized output cuts tokens up to \tech{80\%} across 8+ formats,
+        with tiktoken token budgeting, streaming for 10 MB+ notebooks, and Claude Desktop /
+        Cursor / VS Code integration.
+    }
+}
+
+\project{Chatterbox-Optimized --- Production Text-to-Speech Engine}{2025}{
+    \achievement{
+        Up to \tech{4.5$\times$ faster inference} (RTF 0.59 $\rightarrow$ 0.13) via bucketed CUDA
+        Graphs, bfloat16, and KV-cache tuning; zero-hallucination pipeline (parallel candidates +
+        \tech{Faster-Whisper} WER validation) deployed to \tech{RunPod serverless}.
+    }
+}
+
+\project{Archon 2.0 --- Agent Security Platform}{2026}{
+    \achievement{
+        8-layer defense pipeline, \tech{222-probe corpus} across 10 attack packs, runtime defense
+        proxy, MCP security scanning, and memory-poisoning targets --- full \tech{OWASP Agentic
+        Top-10 (ASI01--ASI10)} coverage; \tech{2,295 tests} at a 93\% coverage gate. Predecessor
+        ranked \tech{13th/100+ overall} (49.7\% avg; 85.1\% defense / 14.4\% attack) in Berkeley's AgentBeats Arena.
+    }
+}
+
+% ----- Education -----
+\section{Education}
+
+\degree{B.Sc. Software Engineering}{National University of Modern Languages (NUML), Islamabad}{Aug 2026}{}
+
+% ----- Certifications -----
+\section{Certifications}
+
+\tagline{Certificates}{Kaggle \tech{2$\times$ Expert} (Datasets · Notebooks) · DataCamp DS/DA career tracks · 4 Google Cloud Gen AI badges · NUST LLM Bootcamp}
+
+\end{document}

@@ -1,0 +1,153 @@
+\documentclass{ExpressiveResume}
+
+% Comfortable sizing for the 2-page full version
+\renewcommand{\normalsize}{\fontsize{10.5pt}{12.4pt}\selectfont}
+\renewcommand{\spacesmall}{4pt}
+\renewcommand{\spacenormal}{8pt}
+
+\begin{document}
+\normalsize
+
+\resumeheader[
+    firstname=Yasir,
+    lastname=Raza,
+    email=yasirabdali6@gmail.com,
+    github=Yasirrazaa,
+    linkedin=yasir-raza,
+    state=Islamabad,
+    qrcode=./images/qr.png
+]
+\begin{flushleft}
+    \faIcon{phone-alt} \href{tel:+923145363379}{+92 314 5363379}
+    \contactseparator
+    \faIcon[brands]{python} \href{https://pypi.org/user/yasirabdali6/}{pypi.org/user/yasirabdali6}
+    \contactseparator
+    \faIcon[brands]{kaggle} \href{https://www.kaggle.com/yasirabdaali/}{kaggle.com/yasirabdaali}
+    \contactseparator
+    \faIcon[regular]{globe} \href{https://yasirrazaa.github.io}{yasirrazaa.github.io}
+\end{flushleft}
+
+\summary{Python developer and open-source maintainer with 1.5+ years of remote experience on
+US-based teams. Two published \tech{PyPI} packages (\tech{10K+ downloads}), \tech{7,275}+
+tests written across projects, and a strong quality culture: typed code (mypy), linted code
+(ruff), benchmarked hot paths, and CI-gated releases.}
+
+% ----- Technical Skills -----
+\section{Technical Skills}
+\tagline{Core Python}{Python 3.11+, asyncio, typing/protocols, concurrency (thread pools, subprocess isolation), dataclasses, context managers}
+\tagline{Packaging \& CLI}{setuptools, uv, PyPI publishing, Click, Rich, Sphinx documentation, versioning \& release workflows}
+\tagline{Quality \& Testing}{pytest (7,275+ test functions authored), pytest-asyncio, pytest-benchmark, coverage, ruff, mypy, pre-commit, GitHub Actions CI}
+\tagline{Data \& APIs}{pandas, NumPy, requests/httpx, REST, WebSocket, Scrapy, Playwright, SQL}
+\tagline{Tooling}{Git, Docker, docker-compose, Make, Linux, CI/CD}
+
+% ----- Work Experience -----
+\section{Work Experience}
+
+\experience{Teamlift --- United States (Remote)}{%
+    \role{Junior Data Scientist}{Jan 2024 - Dec 2024}{
+        \achievement{
+            Scraped \tech{thousands of AI tools} from public tool directories, building the
+            structured dataset that powers \tech{Teamo}, Teamlift's recommendation engine.
+        }
+        \achievement{
+            Built an automated \tech{verification pipeline} (HTTP status checks, screenshot
+            capture, freshness validation) that kept listings accurate and trustworthy ---
+            eliminating stale and duplicate entries at scale.
+        }
+        \achievement{
+            Preprocessed and normalized thousands of tool records into model-ready features for
+            the recommendation engine.
+        }
+        \achievement{
+            Worked directly with US-based stakeholders remotely, shipping dataset improvements
+            on tight iteration cycles.
+        }
+    }
+    \role{Data Science Intern}{Jul 2023 - Dec 2023}{
+        \achievement{
+            Built an automated pipeline collecting \tech{thousands of job postings} from dice.com
+            with \tech{deduplication} --- hardened with retries, rate limits, and robust parsers.
+        }
+        \achievement{
+            Extracted skill-demand signals from job descriptions at scale; trained
+            \tech{time-series models} to forecast demand, informing product and market decisions.
+        }
+    }
+}
+
+% ----- Technical Projects -----
+\section{Technical Projects}
+
+\project{NotebookLLM --- Open-Source Python Library, CLI \& MCP Server}{2025 - 2026}{
+    \achievement{
+        Designed, packaged, and published to \tech{PyPI} (10K+ downloads): unified API across
+        \tech{8+ notebook formats}, 4-mode agent-optimized output with tiktoken token budgeting,
+        \tech{ijson streaming} for 10 MB+ notebooks, atomic crash-safe writes, Click CLI with
+        Rich output, pytest suite with benchmarks, ruff + mypy gates, Sphinx docs, and CI.
+    }
+}
+
+\project{Kausal --- Production AI Agent Platform (private)}{2026}{
+    \achievement{
+        Extended the ii-agent framework in \tech{pure Python} (no LangGraph): custom \tech{RAG},
+        layered memory, \tech{OpenTelemetry} observability, \tech{LiveKit} voice/video,
+        \tech{LiteLLM} routing, agent skills, S3 storage --- with a \tech{7,275-test} behavioral
+        suite across 16 test categories (unit, integration, load, e2e).
+    }
+}
+
+\project{Forge --- Code Generation Engine}{2024 - 2026}{
+    \achievement{
+        Built emitters producing \tech{Python SDKs} (Pydantic-validated), CLI tools, MCP servers,
+        and \tech{17 output types} from one OpenAPI 3.x IR; multi-registry publishing pipeline
+        (PyPI, npm, Cargo, Maven, NuGet), byte-stable output tests, and 13 compile gates in CI.
+    }
+}
+
+\project{Cerberus --- Browser Control Plane}{2026}{
+    \achievement{
+        Engineered an idempotent \tech{Make}-driven setup/verify system (\tech{86 automated
+        checks}), a 60-tool MCP bridge, and diagnostic tooling with actionable failure logs
+        across a multi-process Python/Node stack.
+    }
+}
+
+
+\project{Math2Code --- Verified Data \& Test Infrastructure}{2025 - 2026}{
+    \achievement{
+        Maintained \tech{209 pytest tests} plus ruff, mypy strict, package-build, Docker, and
+        split-integrity checks in CI; wrote an oracle that verifies generated code on fresh
+        jittered inputs (\tech{200/200 gold solutions}).
+    }
+}
+
+\project{Archon 2.0 --- Agent Security Platform}{2026}{
+    \achievement{
+        \tech{2,295 tests} at a 93\% coverage gate across a py3.11--3.13 CI matrix; schema
+        migrations, durable results store, checkpoint/resume for long battles, and cosign-signed
+        SBOM releases.
+    }
+}
+
+\project{Chatterbox-Optimized --- TTS Engine}{2025}{
+    \achievement{
+        Production \tech{RunPod serverless} worker (rp\_handler + CUDA Dockerfile) with a
+        reproducible benchmarking suite; up to \tech{4.5$\times$ faster} (RTF 0.13).
+    }
+}
+
+% ----- Education -----
+\section{Education}
+
+\degree{B.Sc. Software Engineering}{National University of Modern Languages (NUML), Islamabad}{Aug 2026}{}
+
+% ----- Certifications -----
+\section{Certifications}
+
+\award{Datasets Expert · Notebooks Expert (13 medals; Datasets rank 731/11,277, best \#109)}{Kaggle}{2024 - 2026}{}
+\award{Associate Data Scientist in Python · Data Analyst with Python (Career Tracks)}{DataCamp}{2025 - 2026}{}
+\award{Generative AI Fundamentals · Intro to LLMs · Intro to Generative AI · Intro to Responsible AI}{Google Cloud Skill Badges}{2023}{}
+\award{Python · Intro to Programming (Professional Certificates)}{Kaggle Learn}{2025}{}
+\award{Advanced LLM Bootcamp}{NUST \& Sky Electric}{2024}{}
+
+\end{document}
